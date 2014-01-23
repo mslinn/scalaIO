@@ -6,8 +6,14 @@ In your build.sbt, put:
 
 ````
 libraryDependencies ++= Seq(
-  "com.micronautics"  %% "scala-io"  % "0.0.1" withSources
+  "com.micronautics"  %% "scalaio"  % "0.1.0-SNAPSHOT" withSources
 )
+
+resolvers ++= Seq(
+  Resolver.url("play-plugin-releases",  new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-releases/"))(Resolver.mavenStlePatterns),
+  Resolver.url("play-plugin-snapshots", new URL("http://repo.scala-sbt.org/scalasbt/sbt-plugin-snapshots/"))(Resolver.mavenStlePatterns)
+)
+
 ````
 
 To use:

@@ -1,5 +1,7 @@
 organization := "com.micronautics"
 
+organizationHomepage := Some(new URL("http://www.micronauticsresearch.com"))
+
 name := "scalaIO"
 
 version := "0.1.0-SNAPSHOT"
@@ -23,6 +25,36 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
+)
+
+publishMavenStyle := true
+
+publishTo <<= version { v: String =>
+  val nexus = "https://oss.sonatype.org/"
+  if (v.trim.endsWith("SNAPSHOT"))
+    Some("snapshots" at nexus + "content/repositories/snapshots")
+  else
+    Some("releases" at nexus + "service/local/staging/deploy/maven2")
+}
+
+startYear := Some(2013)
+
+description := "Common Scala IO tasks"
+
+licenses := Seq("Apache 2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
+
+scmInfo := Some(ScmInfo(url("https://github.com/mslinn/scalaIO"), "https://github.com/mslinn/scalaIO"))
+
+pomExtra := (
+  <developers>
+    <developer>
+      <name>Micronautics Research</name>
+      <email>mslinn@micronauticsresearch.com</email>
+    </developer>
+    <developer>
+    <name>Mike Slinn (twitter: @mslinn)</name>
+    </developer>
+  </developers>
 )
 
 logLevel := Level.Warn
