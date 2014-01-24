@@ -43,7 +43,7 @@ description := "Common Scala IO tasks"
 
 licenses := Seq("Apache 2" -> url("http://www.apache.org/licenses/LICENSE-2.0.txt"))
 
-scmInfo := Some(ScmInfo(url("https://github.com/mslinn/scalaIO"), "https://github.com/mslinn/scalaIO"))
+scmInfo := Some(ScmInfo(url("https://github.com/mslinn/scalaIO"), "scm:git:https://github.com/mslinn/scalaIO.git"))
 
 pomExtra := (
   <developers>
